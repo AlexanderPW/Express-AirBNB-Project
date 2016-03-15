@@ -1,37 +1,4 @@
-<? 
-/*
-
-  function getLocalListings() {
-  $address=urlencode($address);
-  $url = "http://api.eventful.com/json/events/search?location=".types_render_field('hero-title', array('output', 'raw'))."";
-  $url .= "&within=30";
-  $url .= "&page_size=8";
-  $url .= "&page_number=1";
-  $url .= "&image_sizes=perspectivecrop176by124";
-  $url .= "&sort_order=popularity";
-  $url .= "&app_key=sckR75CWfLQsT59Q";
-
-  $str = @file_get_contents($url); 
-  $strp = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $str), true);
-  return $strp; 
- } 
-
-$json_req = getLocalListings();
-
-foreach($json_req['events']['event'] as $list => $event) {
-foreach ($event as $key => $value) {
-  $watching = $event['watching_count'];
-  $title = $event['title'];
-  $img = $event['image']['perspectivecrop176by124']['url'];
-  $venue = $event['venue_name'];
-}
-
-echo "<div class='col-lg-3 col-md-6' style='padding:10px;overflow:hidden;min-height:200px;'><img class='img-responsive' style='width:100%;height:auto' src='$img'><b>$title</b><br>$venue</div>";
-}
-*/
-?>
-<? $cityname = $_REQUEST['cityname']; ?>
-<?
+<? $cityname = $_REQUEST['cityname'];
 function getLocalListings($cat) {
   $address=urlencode($address);
  $url = "http://www.eventbriteapi.com/v3/events/search/?token=WRURYKF7FLK7B5VYWWRN";
