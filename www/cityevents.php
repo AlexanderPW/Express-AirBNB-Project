@@ -1,8 +1,4 @@
-<? 
-
-?>
-<? $cityname = $_REQUEST['cityname']; ?>
-<?
+<? $cityname = $_REQUEST['cityname'];
 function getLocalListings($cat) {
   $address=urlencode($address);
  $url = "http://www.eventbriteapi.com/v3/events/search/?token=WRURYKF7FLK7B5VYWWRN";
