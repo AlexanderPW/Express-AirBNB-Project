@@ -1,5 +1,3 @@
-
-
 <? 
 
 if(!empty($_REQUEST['listing_item'])){
@@ -112,38 +110,6 @@ if($i < 6){
 
 
 
-/*
-foreach ($nsjson_req['routes'] as $routes => $value) {
- 
-
-  $category = $value['category'];
-  $idvalue = $value['stop_ids'][0];
-  $sid = '';
-  $details = '';
-
-
-  
-        $valid = $ssjson_req['id'];
-        $vlat = $ssjson_req['lat'];
-        $vlon = $ssjson_req['lon'];
-        $lat1 = $GLOBALS['lat'];
-        $lat2 = $GLOBALS['lon'];
-        $stopname = $ssjson_req['name'];
-        $miles = round(newdistance($vlat, $vlon, $lat1, $lat2), 2);
-
-       // if ($miles < 1) {
-        $rail_stops .=  "beachMarker = new google.maps.Marker({position: {lat: $vlat, lng: $vlon},map: map,icon: trainimage});";
-        $details .= "$stopname<br> $miles <b>Miles</b><br>";
-     // }
-
-  if ($category == 'Rail') {
-      $name = $value['name'];
-  $rail .= "<b>$name</b><br>$details<br>";
-  //    print_r($ssjson_req);
-   }
-  
-} 
-*/
 
 // ROUTES ARRAY
 
@@ -214,29 +180,6 @@ $p++;
 
 
 
-/******************************************
-
-foreach ($newroutes as $a => $b) {
-  echo $b['routename'].'<br>';
-  $newids = $b['stop_ids'];
-
-foreach ($newids as $c) {
-$ssurl = "http://transit.walkscore.com/transit/stop/$c/?wsapikey=0c4f1575f9b47634688d1950ed736fc4";
-$ssstr = @file_get_contents($ssurl); 
-$ssstrp = json_decode($ssstr, true);
-$ssjson_req = $ssstrp;
-
-$stopdetails = $ssjson_req['name'];
-
-echo $stopdetails.'<br>';
-
-}
-
-echo '<br>';
-
-}
-***************************************/
-
 
 
 /*
@@ -246,87 +189,6 @@ foreach ($nsjson_req['routes'] as $routes => $value) {
 */
 
 
-
-/*
-
-foreach ($nsjson_req['stops'] as $stops => $value) {
-$stopname = $value['name'];
-$stopid = $value['id'];
-$stoproute = $value['route_ids'][0];
-$stoproutes = $value['route_ids'];
-$slat = $value['lat'];
-$slon = $value['lon'];
-$lat1 = $GLOBALS['lat'];
-$lat2 = $GLOBALS['lon'];
-$miles = round(newdistance($slat, $slon, $lat1, $lat2), 2);
-$routename = '';
-
-foreach ($nsjson_req['routes'] as $routes => $val){
-  if($val['id'] == $stoproute) {
-    $cat = $val['category'];
-  }
-}
-
-
-if ($cat == 'Rail') {echo "$stopname $miles<br>";}
-
-}
-*/
-
-        //$routename = $val['name'];
-        //$routeid = $val['id'];
-        //$category = $val['category'];
-  
-  
-//if ($category == 'Rail'){
-
-//$railarr[] = array('routename' => $routename, 'miles' => $miles, 'stopname' => $stopname);  
-//usort($railarr, 'order_by_miles');
-//$raildupe = unique_multi_array($railarr, 'stopname');
-//$raildupe2 = uniqueAssocArray($railarr, 'stopname');
-// $raildupe = array_unique(array_column($railarr, 'stopname'));
-
-// $rail_stops .=  "beachMarker = new google.maps.Marker({position: {lat: $slat, lng: $slon},map: map,icon: trainimage});";
-
-
-
-
-/* 
-foreach ($railarr as $k => $v) {
-  $rn = $v['routename'];
-  $mi = $v['miles'];
-  $sn = $v['stopname'];
-//  $rail .= "<b>$rn</b> $mi<b> Miles</b><br> $sn<br><br>";
-}
-*/
-
-
-
-
-
-/* foreach ($json_req as $stop => $value) {
-if($i < 17){
-    $name = $value['name'];
-    $stopname = substr($name, 0, 20);
-    $distance = round($value['distance'], 2);
-    $cat = $value['route_summary'];
-    $j = 0;
-    foreach ($cat as $key2 => $value2) {
-     if($j == 0){
-      $cats = $value2['category'];
-      $j++;
-    }
-    }
-    $stopdesc = $value['summary_text'];
-    if($cats == 'Rail'){
-       $rlon = $value['lon'];
-      $rlat = $value['lat'];
-      $rail_stops .=  "beachMarker = new google.maps.Marker({position: {lat: $rlat, lng: $rlon},map: map,icon: trainimage});";
-  $rail .= "<b>$stopname</b> $distance<b> Miles</b><br>"; }
-  
-      $i++;
-   } 
-} */
 
 
 
@@ -382,21 +244,6 @@ $state = $_REQUEST['state'];
 
 $json_req = $strp;
 
-/*
-$i = 0;
-foreach ($json_req as $stop => $value) {
-if($i < 3){
-    $name = $value['name'];
-    $stopname = substr($name, 0, 24);
-    $distance = round($value['distance'], 2);
-
-    $stopdesc = $value['summary_text'];
-    echo "<b>$stopname</b> $distance<b> Miles</b><br>";
-   // print_r($json_req);
-   $i++;
-   } 
-}
-*/
 
 
 $i = 0;
