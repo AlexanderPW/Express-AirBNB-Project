@@ -1,0 +1,82 @@
+@import "compass";
+@import 'includes/mixins';
+@import 'includes/variables';
+
+body {
+    font-family: $font-proxima;
+    background: $color-gray-2;
+    font-size: 18px;
+    color: $color-gray-3;
+}
+
+a {
+    color: $color-blue-1;
+}
+
+.spacer-15 {
+    padding-top: 15px;
+    height: 1px;
+}
+
+.spacer-30 {
+    padding-top: 30px;
+    height: 1px;
+}
+
+.spacer-50 {
+    padding-top: 50px;
+    height: 1px;
+}
+
+.text-primary {
+    color: $color-blue-2;
+}
+
+.main {
+    background: $color-gray-1;
+}
+
+hr {
+    border-color: $color-gray-6;
+}
+
+.content {
+    h1 {
+        font-weight: bold;
+        margin-bottom: $margin-lg;
+    }
+
+    h2 {
+        font-weight: 500;
+    }
+
+    h3 {
+        font-weight: 600;
+
+        &.caption-white {
+            margin: 0;
+            padding: 0 $padding-sm;
+            background: $color-white;
+            line-height: 60px;
+        }
+    }
+}
+
+@import 'includes/bootstrap';
+@import 'includes/accomodations';
+@import 'includes/blog';
+@import 'includes/header';
+@import 'includes/home';
+@import 'includes/landing';
+@import 'includes/listing';
+@import 'includes/listings';
+@import 'includes/modal';
+@import 'includes/page';
+@import 'includes/footer';
+
+/* ------------------- PHONE ---------------------*/
+@media (max-width: 767px) {
+    body {
+        padding-top: 73px;
+    }
+}

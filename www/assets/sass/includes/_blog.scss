@@ -1,0 +1,112 @@
+body.blog,
+body.single,
+body.archive,
+body.search {
+    .blog-item {
+        padding: 0 $padding $padding-lg $padding;
+        background: $color-white;
+        border: $color-gray-4 1px solid;
+        margin-bottom: $margin-lg;
+        @include border-radius(0 0 4px 4px);
+
+        .post-thumbnail {
+            @include border-radius(4px 4px 0 0);
+        }
+
+        a {
+            color: $color-blue-2;
+        }
+    }
+}
+
+body.single {
+    .blog-item {
+        background: transparent;
+        border: 0;
+
+        .blog-content {
+            background: $color-white;
+            border: $color-gray-4 1px solid;
+            border-top: 0;
+            @include border-radius(0 0 4px 4px);
+        }
+    }
+}
+
+.widget {
+    margin-top: $margin;
+    background: $color-white;
+    border: $color-gray-4 1px solid;
+
+    .widgettitle {
+        background: $color-blue-2;
+        padding: $padding;
+        color: $color-white;
+        margin-top: 0;
+    }
+
+    ul {
+        list-style: none;
+        margin: $margin;
+        padding: 0;
+    }
+
+    a {
+        color: $color-blue-2;
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+
+@media (max-width: 767px) {
+    body.blog,
+    body.single,
+    body.archive,
+    body.search {
+    }
+
+}
+
+@media (min-width: 768px) {
+    body.blog,
+    body.single,
+    body.archive,
+    body.search {
+
+        .hero {
+            margin-top: -80px;
+            height: 370px;
+            min-height: 370px;
+
+            h1, h2 {
+                color: $color-blue-2;
+                text-align: left;
+            }
+
+            h2 {
+                font-weight: 300;
+
+            }
+        }
+    }
+
+    body.single {
+        .hero {
+            height: 80px;
+            min-height: 80px;
+            background-position: center 0;
+
+            h1, h2 {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    body.blog,
+    body.single,
+    body.archive,
+    body.search {
+    }
+}

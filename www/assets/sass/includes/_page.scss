@@ -1,0 +1,124 @@
+.gform_body {
+    label {
+        display: none;
+    }
+
+    .gfield_error {
+        label {
+            display:block;
+        }
+    }
+
+    li {
+        margin: 5px 0;
+    }
+
+    input[type="text"], input[type="email"], select, textarea {
+        border: 1px $color-gray-5 solid;
+        @include border-radius(4px);
+        padding: 3px 6px;
+        background-color: #FFFFFF;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        color: $color-black;
+        display: block;
+        font-size: 14px;
+        line-height: 1.42857;
+        padding: 6px 12px;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        vertical-align: middle;
+        width: 100%;
+
+        &::-webkit-input-placeholder {
+            font-style: italic;
+        }
+
+        &:-moz-placeholder {
+            /* Firefox 18- */
+            font-style: italic;
+        }
+
+        &::-moz-placeholder {
+            /* Firefox 19+ */
+            font-style: italic;
+        }
+
+        &:-ms-input-placeholder {
+            font-style: italic;
+        }
+
+        &:focus {
+            border: 1px $color-gray-3 solid;
+        }
+    }
+
+    input[type="text"], input[type="email"], select {
+        height: 34px;
+    }
+
+    textarea {
+        height: 110px;
+    }
+}
+
+.gform_footer {
+    padding: 0;
+    margin: 0;
+
+    .gform_button {
+        background: $color-blue-2;
+        padding: $padding-sm $padding-xl;
+        color: $color-white;
+        font-weight: 600;
+        @include border-radius(4px);
+        border: 1px $color-blue-2 solid;
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+@media (min-width: 768px) {
+    .body {
+        .hero {
+            min-height: 540px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            h1 {
+                font-size: 50px;
+                font-weight: bold;
+                margin-top: 200px;
+            }
+
+            h2 {
+                font-size: 37px;
+                font-weight: bold;
+            }
+        }
+
+        .main {
+            padding-bottom: $padding-xl;
+
+        }
+    }
+}
+
+/* ------------------- PHONE ---------------------*/
+@media (max-width: 767px) {
+    .hero {
+        min-height: 350px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: $margin
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}

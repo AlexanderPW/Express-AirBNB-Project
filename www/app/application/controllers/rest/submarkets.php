@@ -1,0 +1,286 @@
+<?
+class Submarkets extends REST_Controller
+{
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('json');
+        $this->load->model(array('Listing', 'Listing_Amenity', 'City'));
+    }
+
+    /**
+     * The main method to return a list of listings for the listings search.  This is called by the listings list search
+     */
+    function index_get()
+    {
+        $this->load->helper('json');
+        $filter = $this->get_filter();
+        $amenities = json_decode($this->get('amenities'));
+        $bedrooms = intval($this->get('bedrooms'));
+        $limit = $this->get('limit');
+        $start = $this->get('start');
+        $is_popular = $this->get('popular');
+        $is_featured = $this->get('listings_type')=='featured';
+        $listing_ids = array();
+
+        // This is a search from the google map using the map's center and bounds
+        if (isset($filter->latitude) && isset($filter->longitude) && isset($filter->range)) {
+
+            /** If this is a search based on lat/lng, do a geospatial search */
+            $listing_ids = $this->Listing->get_listings_geospatial_ids($filter, $amenities, $bedrooms, $is_featured);
+            $listings = $this->Listing->get_listings_geospatial($limit, $start, $filter, $amenities, $bedrooms, $is_featured);
+        } else if ($is_popular) {
+
+            $featured_city = $this->City->load_by_city_state($this->get('city'), $this->get('state'));
+
+            $listing_ids = $this->Listing->get_front_ids($amenities, $bedrooms, NULL, $featured_city->id, $is_featured);
+            $listings = $this->Listing->get_front_list($limit, $start, $amenities, $bedrooms, NULL, $featured_city->id, $is_featured);
+        }
+        else if (isset($filter->latitude) && isset($filter->longitude) && !($this->get('ignore_location'))) {
+
+            /** If this is a search based on lat/lng, do a geospatial search */
+            if (!isset($filter->range) || !$filter->range) {
+                $filter->range = 25;
+            }
+
+            $listing_ids = $this->Listing->get_listings_geospatial_ids($filter, $amenities, $bedrooms, $is_featured);
+            $listings = $this->Listing->get_listings_geospatial($limit, $start, $filter, $amenities, $bedrooms, $is_featured);
+        } else {
+            $state = '';
+            if (isset($filter->state)) {
+                $state = $filter->state;
+            }
+            $listing_ids = $this->Listing->get_front_ids($amenities, $bedrooms, $state, NULL, $is_featured);
+            $listings = $this->Listing->get_front_list($limit, $start, $amenities, $bedrooms, $state, NULL, $is_featured);
+        }
+        $response = new stdClass;
+        $response->listings = $this->decorate_objects($listings);
+
+        $response->amenity_counts = array();
+        if ($listing_ids) {
+            $response->amenity_counts = $this->get_amenity_counts($listing_ids);
+        }
+
+        $response->count = sizeof($listing_ids);
+        $response->page = max(1, ($start + $limit) / $limit);
+
+        if (isset($filter->result)) {
+            $response->location = $filter->result;
+        }
+
+        if (isset($filter->range)) {
+            $response->range = $filter->range;
+        }
+        $this->response($response);
+    }
+
+    /**
+     * Performs a query based on the listing ids we got back to see which amenities are available for this search
+     */
+    function get_amenity_counts($listing_ids)
+    {
+        $amenity_counts = $this->Listing_Amenity->get_amenity_counts($listing_ids);
+        return $amenity_counts;
+    }
+
+     function get_major_city_get()
+    {
+        $this->load->helper('json');
+        $subof = $this->uri->segment(4);
+        $subofnew = str_replace('%20', ' ', $subof);
+        $subofstate = $this->uri->segment(5);
+       $city = $this->Listing->get_major_city($subofnew, $subofstate);
+      $majorcity = $this->Listing->get_from_id($city);
+        $this->response($majorcity);
+    }
+
+ function get_city_for_sub_get()
+    {   
+        $this->load->helper('json');
+        $city = $this->uri->segment(4);
+        $id = $this->City->get_city_id($city);
+        $sublistings = $this->City->get_city_submarkets($id[0]);
+        $this->response($sublistings);
+    }
+
+    /**
+     * Gets the list of featured listings for the front page.
+     */
+    function featured_get()
+    {
+        $this->load->helper(array('json'));
+        $this->load->library('uuid');
+        $listings = $this->Listing->get_featured();
+
+        /* Featured listings need to be a multiple of 3 for the slider*/
+        if($this->get('slider')) {
+            while(sizeof($listings)%3>0) {
+                $listing = clone $listings[array_rand($listings)];
+                /** Need to randomize the uuid or else backbone will treat it as a duplicate and discard it */
+                $listing->uuid = $this->uuid->v4();
+                $listings[] = $listing;
+            }
+        }
+        //array_print($listings);
+        $listings = $this->decorate_objects($listings, sizeof($listings));
+        $this->response($listings);
+    }
+
+    /**
+     * Returns a single listing identified by its uuid
+     * @param $uuid
+     */
+    function listing_get($uuidOrUrl='')
+    {
+        if (preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', $uuidOrUrl)) {
+            $listing = $this->Listing->load_by_uuid($uuidOrUrl);
+        } else {
+            $listing = $this->Listing->load_by_url($uuidOrUrl);
+        }
+
+        if(!$listing && intval($uuidOrUrl)) {
+            $listing=$this->Listing->load_by_conversion_id($uuidOrUrl);
+        }
+
+        $this->response($this->decorate_object($listing));
+    }
+
+    function location_get() {
+        $this->response($this->get_filter());
+    }
+
+    /**
+     * Builds a filter based on the parameters passed on the request.  The fitler is then applied to the list
+     * of listings returned to the browser
+     * @return mixed
+     */
+    private function get_filter()
+    {
+        $location = $this->get('location');
+        if ($location) {
+            if(is_string($location)) {
+                $location = json_decode($location);
+            } else {
+                $location = (object) $location;
+            }
+            $location = $this->geocode_address($location);
+            return $location;
+        }
+    }
+
+    /**
+     * Builds a location from the url parameters passed in and sends a request to google to geocode it
+     * @param $location
+     * @return mixed
+     */
+    private function geocode_address($location)
+    {
+        $url = '';
+
+        if (isset($location->city)) {
+            $url .= $location->city;
+        }
+        if (isset($location->state)) {
+            if ($url) {
+                $url .= ",";
+            }
+            $url .= $location->state;
+        }
+
+        if (isset($location->zipcode)) {
+            if ($url) {
+                $url .= ",";
+            }
+            $url .= $location->zipcode;
+        }
+
+        if ((isset($location->city) || isset($location->zipcode)) && $url) {
+            $address = urlencode($url);
+            $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "&sensor=false";
+            $json = file_get_contents($url);
+            $result = json_decode($json)->results[0];
+
+            $location->latitude = $result->geometry->location->lat;
+            $location->longitude = $result->geometry->location->lng;
+            $location->result = $result;
+        }
+
+        return $location;
+    }
+
+    /**
+     * Called when the user emails a listing to their friends
+     */
+    public function email_post($uuid = '')
+    {
+        if ($uuid) {
+
+            $listing = $this->Listing->load_by_uuid($uuid);
+
+            $emails = $this->post('emails');
+            $message = $this->post('message');
+            $this->load->helper('notification');
+
+            $emails = notify_listing($emails, $message, $listing);
+            json_success(sprintf("Email sent to %d addresses successfully", sizeof($emails)), array('emails'=> $emails));
+        }
+    }
+
+    public function decorate_objects($objects)
+    {
+        $updated_objects = array();
+        foreach ($objects as $object) {
+            $object->id = intval($object->id);
+            $object->featured_city_id = intval($object->featured_city_id);
+            $object->bedrooms = intval($object->bedrooms);
+            $object->is_pet_friendly = intval($object->is_pet_friendly);
+            $object->is_featured = intval($object->is_featured);
+            $object->is_published = intval($object->is_published);
+            $object->latitude = floatval($object->latitude);
+            $object->longitude = floatval($object->longitude);
+            unset($object->conversion_id, $object->deleted);
+
+            if (isset($object->distance)) {
+                $object->distance = round($object->distance, 1) . " Miles";
+            }
+
+            $photos = $this->Listing->get_photos($object->id);
+            $object->photos = array();
+            foreach ($photos as $photo) {
+                $photo->original_url = $this->config->item('cloudfront_url') .
+                    'assets/listings/resized/' . $photo->original_url;
+                $object->photos[] = $photo;
+            }
+
+            $object->url = get_listing_url($object);
+
+            $updated_objects[] = $object;
+        }
+        return $updated_objects;
+    }
+
+    public function decorate_object($object)
+    {
+        if ($object) {
+            $object->unit_types = $this->Listing->get_unit_types($object->id);
+            $object->amenities = $this->Listing->get_unit_amenities($object->id);
+            $object->walkable_score = 0;
+            $object->walkable_descr = '';
+            $object->description = nl2br($object->description);
+            $object->map_address = urlencode($object->address . "," . $object->city . "," . $object->state . " " . $object->zipcode);
+
+            $photos = $this->Listing->get_photos($object->id);
+            $object->photos = array();
+            foreach ($photos as $photo) {
+                $photo->original_url = $this->config->item('cloudfront_url') .
+                    'assets/listings/resized/' . $photo->original_url;
+                $object->photos[] = $photo;
+            }
+        }
+
+        return $object;
+    }
+}
+
+?>

@@ -1,0 +1,101 @@
+footer#footer {
+    color: $color-white;
+    padding-top: $padding;
+
+    a {
+        color: $color-white;
+    }
+
+    ul.social {
+        li {
+            a {
+                @include hide-text;
+                width: 48px;
+                height: 48px;
+                @include bg-img('socials.png');
+
+                &.facebook {
+                    background-position: -2px 0;
+                }
+
+                &.instagram {
+                    background-position: -113px 0;
+                }
+
+                &.google {
+                    background-position: -57px 0;
+                }
+
+                &.linkedin {
+                    background-position: -169px 0;
+                }
+
+                &.twitter {
+                    background-position: -224px 0;
+                }
+
+                &.youtube {
+                    background-position: -280px 0;
+                }
+            }
+        }
+    }
+}
+/* ------------------ DESKTOP --------------------*/
+@media (min-width: 768px) {
+    footer#footer {
+
+
+        .footer-top {
+            @include bg-img('logo-white.svg');
+            background-size: 118px 45px;
+            padding-left: 230px;
+
+            #menu-footer-links-menu {
+                li.menu-item {
+                    float: left;
+                    width: 50%;
+                    box-sizing: border-box;
+
+                    a {
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+
+        .footer-bottom {
+            margin-top: $margin-xl;
+            padding-bottom: $padding-xl;
+
+            .copy {
+                padding-top: 30px;
+                font-weight: 300;
+                font-size: 12px;
+                margin: 0;
+            }
+
+            .phone {
+                padding-top: 30px;
+                font-weight: 300;
+                font-size: 12px;
+                display: block;
+            }
+
+            .logos {
+                a {
+                    display: inline-block;
+                    margin-right: $margin;
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+}
+
+/* ------------------- PHONE ---------------------*/
+@media (max-width: 767px) {
+    footer#footer {
+
+    }
+}

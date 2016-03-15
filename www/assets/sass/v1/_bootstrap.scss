@@ -1,0 +1,185 @@
+@import "compass/css3";
+@import "mixins";
+
+.btn {
+    @include border-radius(4px);
+    font-weight:600;
+    color: $color-gray-6;
+    border: 1px solid $color-gray-4;
+
+    i {
+
+        &.glyphicons {
+            padding-left:25px;
+            &:before {
+                font-size:20px;
+                top:-10px;
+            }
+        }
+    }
+}
+
+.btn-danger, .btn-danger:hover, .btn-danger:active {
+    color: $color-white;
+    border: #aa1111 1px solid;
+}
+
+.btn-next, .btn-next:hover, .btn-next:active {
+    background: $color-gray-12;
+    color: $color-white;
+}
+
+.btn-primary, .btn-primary:hover {
+    color: $color-white;
+    background:$color-blue-9;
+}
+
+.btn-secondary, .btn-secondary:hover {
+    color: $color-black !important;
+    background:$color-yellow-1;
+}
+
+.btn-white, .btn-white:hover {
+    color: $color-gray-5 !important;
+    background:$color-white;
+    border: 1px solid $color-gray-4;
+
+    i {
+        &.glyphicons {
+            &:before {
+                color: $color-gray-6;
+            }
+        }
+    }
+}
+
+.btn-reserve {
+    i {
+        &.glyphicons {
+            &:before {
+                top:-12px;
+            }
+        }
+    }
+}
+
+.btn-lg {
+    font-weight:600;
+    font-size:16px;
+    padding:13px 30px;
+
+    i {
+        &.glyphicons {
+            padding-left:30px;
+            &:before {
+                top:-15px;
+            }
+        }
+    }
+}
+
+.btn-yellow {
+    border:2px $color-black solid;
+    @include text-shadow(rgba($color-white, 0.3) 1px 2px 0);
+    @include box-shadow(rgba($color-white, 0.7) 0 2px 2px 0 inset);
+    @include background-image(linear-gradient(#eeb925,#ebaf1c));
+    color: $color-brown-1;
+
+    &:hover {
+        background: #fbc83e;
+        color: $color-brown-1;
+    }
+}
+
+.btn-yellow-2 {
+    border: 2px $color-yellow-3 solid;
+    color: #6e571a;
+    @include text-shadow(rgba($color-white, 0.3) 1px 2px 0);
+    @include box-shadow(rgba($color-white, 0.7) 0 2px 2px 0 inset);
+    @include background-image(linear-gradient(#f1d071,#eec863));
+
+    &:hover {
+        background: #fbc83e;
+    }
+}
+
+.btn-yellow-3 {
+    background: $color-yellow-1;
+    color: $color-brown-1;
+    @include text-shadow(rgba($color-white, 0.1) 1px 2px 0);
+
+    &:hover {
+        background: #fbc83e;
+    }
+
+    i {
+        &.glyphicons {
+            &:before {
+                color: $color-brown-1;
+            }
+        }
+    }
+}
+
+.btn-white-text {
+    color: $color-white !important;
+    @include text-shadow(rgba($color-black, 0.3) 1px 2px 0);
+
+    &:hover {
+        color: $color-white !important;
+    }
+
+    i {
+        &.glyphicons {
+            &:before {
+                color: $color-white !important;
+            }
+        }
+    }
+}
+
+.btn-blue {
+    border:2px #135163 solid;
+    @include text-shadow(rgba($color-black, 0.3) 1px 2px 0);
+    @include box-shadow(rgba($color-blue-2, 0.3) 0 2px 1px 0 inset);
+    @include background-image(linear-gradient(#19667c,#12596f));
+    color: $color-white;
+
+    i {
+        &.glyphicons {
+            &:before {
+                color: $color-white;
+            }
+        }
+    }
+
+    &:hover {
+        background: #1d6f86;
+        color: $color-white;
+
+    }
+}
+
+.btn-simple {
+    border: 0;
+    @include border-radius(0);
+}
+
+.btn-gray, .btn-gray:hover {
+    background: $color-gray-8;
+    color: $color-white;
+    border: 1px $color-gray-5 solid;
+}
+
+.form-control.error {
+    border: 1px solid $color-red-1;
+}
+
+label.error {
+    color: $color-red-1 !important;
+    background: $color-red-2;
+    padding:5px 5px 5px 10px;
+    border-left: 3px solid $color-red-1;
+    display:block;
+
+}

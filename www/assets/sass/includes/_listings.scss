@@ -1,0 +1,288 @@
+#listings {
+
+    #listings-map {
+        margin: 20px -20px;
+
+        .gm-style-iw {
+            .listing {
+                border: 0;
+                height: auto;
+
+                img {
+                    max-width: 100%;
+                }
+
+                h5 {
+                    margin: 0 0 5px 0;
+                }
+            }
+        }
+    }
+
+    #map-container {
+        #map-listings {
+            @include background-opacity($color-white, 0.7);
+            height: 800px;
+            overflow: hidden;
+            overflow-y: auto;
+
+            .container {
+                width: auto;
+            }
+
+            .title-container {
+                display: none;
+            }
+
+            .listing {
+                margin-bottom: $margin-xs;
+                .distance-listing {
+                    display: none;
+                }
+
+                .distance-map {
+                    display: block;
+                }
+
+                .img-holder {
+                    height: auto;
+                    min-height: 0;
+                }
+
+                hr {
+                    display: none;
+                }
+
+                .details-holder {
+                    min-height: 0;
+                    height: auto;
+                    padding: $padding 0;
+
+                    .btns {
+                        display: none;
+                    }
+
+                    h3 {
+                        font-size: 16px;
+                        font-weight: normal;
+                        margin: 0;
+                    }
+
+                    .features {
+                        display: none;
+                    }
+
+                    p {
+                        display: none;
+                    }
+
+                }
+            }
+        }
+    }
+
+    h3.title {
+        padding: $padding 0;
+        height: 55px;
+    }
+
+    #listings-sidebar {
+        border-top: 1px $color-gray-6 solid;
+        background: $color-white;
+
+        form {
+            position: relative;
+        }
+
+        .toggle {
+            overflow: hidden;
+            position: absolute;
+            z-index: 101;
+            right: 0;
+
+            a {
+                display: block;
+                float: left;
+                line-height: 48px;
+                font-size: 32px;
+                width: 48px;
+                height: 48px;
+                text-align: center;
+
+                &.list-view {
+                    background: $color-blue-1;
+                    color: $color-blue-2;
+
+                    &.active {
+                        color: $color-white;
+                    }
+
+                }
+
+                &.map-view {
+                    background: $color-blue-2;
+
+                    &.active {
+                        color: $color-white;
+                    }
+
+                }
+            }
+        }
+    }
+
+    #listings-list {
+
+        .listing {
+            overflow: hidden;
+            margin-bottom: $margin-lg;
+
+            .distance-listing {
+                display: block;
+            }
+
+            .distance-map {
+                display: none;
+            }
+
+            hr {
+                margin-top: 0;
+            }
+
+            .thumbs {
+                li:not(:first-child) {
+                    display: none;
+                }
+            }
+
+            h3 {
+                a {
+                    color: $color-gray-3;
+                }
+            }
+
+            .distance {
+                font-weight: 600;
+                margin: $margin $margin 0 0;
+            }
+
+            .features {
+                overflow: hidden;
+                li {
+                    float: left;
+                    width: 48%;
+                    i {
+                        color: $color-blue-2;
+                    }
+                }
+            }
+
+            .btns {
+                .btn {
+                    padding: $padding;
+                    border-radius: 0;
+                    font-size: 20px;
+                    color: $color-white;
+
+                    &.btn-details {
+                        background: $color-blue-2;
+                    }
+
+                    &.btn-reserve {
+                        background: $color-yellow-2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+@media (min-width: 768px) {
+    #listings {
+
+        #map-container {
+            position: relative;
+            #map-listings {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 800px;
+                width: 300px;
+            }
+        }
+
+        #listings-sidebar {
+            padding-top: 30px;
+
+            .toggle {
+                right: -30px;
+                bottom: -65px;
+            }
+        }
+
+        #listings-list {
+            .listing {
+                position: relative;
+                background: $color-white;
+                .img-holder {
+                    padding-left: 0;
+                }
+
+                h3 {
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+
+                .btns {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    margin-left: -15px;
+                    width: 105%;
+                    @include display-flex();
+
+                    .btn {
+                        @include flex(1);
+                    }
+                }
+
+                .img-holder,
+                .details-holder {
+                    min-height: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 991px) {
+    #listings {
+        #listings-list {
+            .listing {
+                h3 {
+                    font-weight: 600;
+                    font-size: 30px;
+                }
+
+                .img-holder,
+                .details-holder {
+                    height: 220px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #listings {
+        #listings-list {
+            .listing {
+                .img-holder,
+                .details-holder {
+                    height: 350px;
+                }
+            }
+        }
+    }
+}
