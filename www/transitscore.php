@@ -1,0 +1,25 @@
+<?
+$addr = $_REQUEST['addr'];
+$addrf = preg_replace("/[\s_]/", "-", $addr);
+$city = $_REQUEST['city'];
+$state = $_REQIEST['state'];
+?>
+<div style="padding: 0; margin: 0px; border: 0; outline: 0; width: 100%px; border: 0px solid #999;">
+ <div style="border:0;outline:0;padding:0; margin: 11px 9px 0;">
+    <h2 style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 0; margin: 0; border: 0; outline: 0; text-decoration: none; vertical-align: baseline; font-style: normal; background: none; text-align: left; font:15px/19px 'Arial Black', Gadget, sans-serif; font-weight: normal; color: #222;"> <?= $addr ?> </h2>
+    <!-- <h3 style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 0; margin: 0; border: 0; outline: 0; text-decoration: none; vertical-align: baseline; font-style: normal; background: none; text-align: left; font:12px/14px Verdana, Arial, Helvetica, sans-serif; font-weight: bold; color: #666; margin: 2px 0 4px 0;"> Walker&rsquo;s Paradise </h3> -->
+     <div style="padding: 0; margin: 0; border: 0; outline: 0; position: relative; width: 100%; padding-bottom: 30%"> <div style="padding: 0; margin: 0; border: 0; outline: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0;"> <a href="https://www.walkscore.com/score/1517-12th-Avenue-Seattle?utm_source=badge&utm_medium=responsive&utm_campaign=badge">
+        <!--[if lte IE 8]><img src="//pp.walk.sc/badge/walk/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.png" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Walk Score of 1517 12th Avenue Seattle WA 98122"><![endif]--> 
+        <!--[if gt IE 8]><img src="//pp.walk.sc/badge/walk/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.svg" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Walk Score of 1517 12th Avenue Seattle WA 98122"><![endif]--> <!--[if !IE]>
+         <!-- --><img src="//pp.walk.sc/badge/walk/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.svg" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Walk Score of 1517 12th Avenue Seattle WA 98122"><!-- <![endif]-->
+         <!--[if lte IE 8]><img src="//pp.walk.sc/badge/transit/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.png" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Transit Score of 1517 12th Avenue Seattle WA 98122"><![endif]--> 
+         <!--[if gt IE 8]><img src="//pp.walk.sc/badge/transit/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.svg" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Transit Score of 1517 12th Avenue Seattle WA 98122"><![endif]--> <!--[if !IE]> <!-- -->
+         <img src="//pp.walk.sc/badge/transit/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.svg" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Transit Score of 1517 12th Avenue Seattle WA 98122"><!-- <![endif]-->
+         <!--[if lte IE 8]><img src="//pp.walk.sc/badge/bike/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.png" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Bike Score of 1517 12th Avenue Seattle WA 98122"><![endif]--> 
+         <!--[if gt IE 8]><img src="//pp.walk.sc/badge/bike/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.svg" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Bike Score of 1517 12th Avenue Seattle WA 98122"><![endif]--> <!--[if !IE]>
+          <!-- --><img src="//pp.walk.sc/badge/bike/<?= $addrf ?>-<?= $city ?>-<?= $state ?>.svg" style='border-radius: 0; box-shadow: none; outline: 0; color: transparent; margin: 0 0 0 2.000000%; float: left; padding: 0; width: 30.666667%; background: none; border: 0;' alt="Bike Score of 1517 12th Avenue Seattle WA 98122"><!-- <![endif]--></a></div> </div>
+         <!-- <p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 0; margin: 0; border: 0; outline: 0; color: #999; font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif; line-height: 13px; clear:both; padding: 8px 0;"> -->
+         <img style="visibility: hidden;" width=1 height=1 src="https://www.redfin.com/rift?ev=external_web&p=walkscore&s=score_badge&a=impression" /> </p></div></div>
+         
+
+                   

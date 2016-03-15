@@ -1,0 +1,49 @@
+@import "compass/css3";
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-light-webfont.woff", "/assets/fonts/roboto-light-webfont.otf", "/assets/fonts/roboto-light-webfont.ttf", "/assets/fonts/roboto-light-webfont.svg"),
+    "/assets/fonts/roboto-light-webfont.eot", normal, normal);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-lightitalic-webfont.woff", "/assets/fonts/roboto-lightitalic-webfont.otf", "/assets/fonts/roboto-lightitalic-webfont.ttf", "/assets/fonts/roboto-lightitalic-webfont.svg"),
+    "/assets/fonts/roboto-lightitalic-webfont.eot", normal, italic);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-regular-webfont.woff", "/assets/fonts/roboto-regular-webfont.otf", "/assets/fonts/roboto-regular-webfont.ttf", "/assets/fonts/roboto-regular-webfont.svg"),
+    "/assets/fonts/roboto-medium-webfont.eot", 500, normal);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-medium-webfont.woff", "/assets/fonts/roboto-medium-webfont.otf", "/assets/fonts/roboto-medium-webfont.ttf", "/assets/fonts/roboto-medium-webfont.svg"),
+    "/assets/fonts/roboto-medium-webfont.eot", 600, normal);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-mediumitalic-webfont.woff", "/assets/fonts/roboto-mediumitalic-webfont.otf", "/assets/fonts/roboto-mediumitalic-webfont.ttf", "/assets/fonts/roboto-mediumitalic-webfont.svg"),
+    "/assets/fonts/roboto-mediumitalic-webfont.eot", 600, italic);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-bold-webfont.woff", "/assets/fonts/roboto-bold-webfont.otf", "/assets/fonts/roboto-bold-webfont.ttf", "/assets/fonts/roboto-bold-webfont.svg"),
+    "/assets/fonts/roboto-bold-webfont.eot", bold, normal);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-bolditalic-webfont.woff", "/assets/fonts/roboto-bolditalic-webfont.otf", "/assets/fonts/roboto-bolditalic-webfont.ttf", "/assets/fonts/roboto-bolditalic-webfont.svg"),
+    "/assets/fonts/roboto-bolditalic-webfont.eot", bold, italic);
+
+@include font-face("Roboto",
+    font-files("/assets/fonts/roboto-black-webfont.woff", "/assets/fonts/roboto-black-webfont.otf", "/assets/fonts/roboto-black-webfont.ttf", "/assets/fonts/roboto-black-webfont.svg"),
+    "/assets/fonts/roboto-black-webfont.eot", 800, normal);
+
+@include font-face("Roboto Slab",
+    font-files("/assets/fonts/robotoslab-light-webfont.woff", "/assets/fonts/robotoslab-light-webfont.otf", "/assets/fonts/robotoslab-light-webfont.ttf", "/assets/fonts/robotoslab-light-webfont.svg"),
+    "/assets/fonts/roboto-light-webfont.eot", 200, normal);
+
+@include font-face("Roboto Slab",
+    font-files("/assets/fonts/robotoslab-thin-webfont.woff", "/assets/fonts/robotoslab-thin-webfont.otf", "/assets/fonts/robotoslab-thin-webfont.ttf", "/assets/fonts/robotoslab-thin-webfont.svg"),
+    "/assets/fonts/roboto-thin-webfont.eot", 300, normal);
+
+@include font-face("Roboto Slab",
+    font-files("/assets/fonts/robotoslab-regular-webfont.woff", "/assets/fonts/robotoslab-regular-webfont.otf", "/assets/fonts/robotoslab-regular-webfont.ttf", "/assets/fonts/robotoslab-regular-webfont.svg"),
+    "/assets/fonts/roboto-regular-webfont.eot", normal, normal);
+
+@include font-face("Roboto Slab",
+    font-files("/assets/fonts/robotoslab-bold-webfont.woff", "/assets/fonts/robotoslab-bold-webfont.otf", "/assets/fonts/robotoslab-bold-webfont.ttf", "/assets/fonts/robotoslab-bold-webfont.svg"),
+    "/assets/fonts/roboto-bold-webfont.eot", bold, normal);

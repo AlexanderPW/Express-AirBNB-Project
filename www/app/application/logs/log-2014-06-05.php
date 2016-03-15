@@ -1,0 +1,46 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2014-06-05 01:20:54 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 06:53:47 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 08:37:24 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 08:46:33 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 09:15:32 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 09:16:47 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 09:30:59 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 09:58:51 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:00:36 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:01:37 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:09:09 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:16:49 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:18:58 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:36:44 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:44:14 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 10:48:21 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 11:47:01 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 11:47:47 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 11:54:17 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:11:47 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:11:54 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:24:55 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:30:34 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:38:54 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:48:34 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:49:20 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 12:57:04 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 13:39:43 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 13:44:33 --> 404 Page Not Found --> account
+ERROR - 2014-06-05 14:34:12 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 14:34:24 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 14:44:25 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 15:31:56 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 16:06:01 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 17:32:17 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 19:00:22 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 20:00:47 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 20:01:07 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 20:09:29 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 20:10:53 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 20:34:02 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 20:41:24 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 23:06:30 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28
+ERROR - 2014-06-05 23:11:39 --> Severity: Notice  --> Undefined property: stdClass::$zip /var/www/vhosts/expresscorporatehousing.com/httpdocs/app/application/controllers/search.php 28

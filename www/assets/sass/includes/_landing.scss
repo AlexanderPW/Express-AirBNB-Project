@@ -1,0 +1,139 @@
+body.page-template-template-landing {
+
+    .hero {
+        .type-toggle {
+            margin-top: $margin-xl;
+            text-align: left;
+
+            select {
+                border: 1px $color-white solid;
+                color: $color-white;
+                background: transparent;
+                @include border-radius(4px);
+                padding: $padding-sm;
+
+                option {
+                    color: $color-gray-2;
+                }
+            }
+        }
+    }
+
+    .main-search {
+        @include background-opacity($color-white, 0.7);
+        margin-top: -64px;
+
+        form {
+            padding: $padding;
+
+            input, select {
+                @include placeholder(#a0a0a0);
+            }
+        }
+    }
+
+    .cta {
+        background: $color-blue-3;
+        color: $color-white;
+        padding: $padding-lg;
+
+        .btn-primary {
+            background: $color-blue-4;
+            font-weight: normal;
+            border-radius: 0;
+        }
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+
+@media (max-width: 767px) {
+    body.page-template-template-landing {
+    }
+
+}
+
+@media (min-width: 768px) {
+    body.page-template-template-landing {
+        header#header {
+            z-index: 101;
+            @include background-opacity($color-white, 0.7);
+
+            .brand {
+                @include bg-img('logo-white.svg');
+                background-size: 118px 45px;
+                width: 118px;
+                height: 45px;
+            }
+
+            a {
+                color: $color-white;
+            }
+        }
+
+        .hero {
+            margin-top: -80px;
+            height: 710px;
+            background-position: center top;
+            h1, h2 {
+                color: $color-white;
+                text-align: left;
+                max-width: 590px;
+            }
+
+            h2 {
+                font-weight: 300;
+
+            }
+        }
+
+        .highlighted {
+            @include display-flex();
+
+            > div {
+                @include flex(1);
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                &.highlighted-features {
+                    color: $color-white;
+                    padding: $padding-lg $padding-xl;
+
+                    h3 {
+                        font-size: 30px;
+                        line-height: 42px;
+                        font-weight: bold;
+                    }
+
+                    p, a {
+                        font-size: 20px;
+                        line-height: 26px;
+                    }
+
+                    a {
+                        color: $color-blue-3;
+                    }
+                }
+            }
+        }
+
+        .content {
+            padding-bottom: 470px;
+            @include bg-img('city.png');
+            background-position: center bottom;
+        }
+
+        .main {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    body.page-template-template-landing {
+    }
+}

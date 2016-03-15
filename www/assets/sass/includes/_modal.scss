@@ -1,0 +1,178 @@
+.modal-dialog {
+    padding-top: 60px;
+
+    &.reserve, &.email {
+        width: 800px;
+
+        @media (max-width: 767px) {
+            width: inherit;
+        }
+    }
+
+    .title {
+        color: $color-white;
+        font-size: 18px;
+        position: absolute;
+        top: -60px;
+        left: 0;
+
+        i {
+            &.glyphicons {
+                padding-left: 25px;
+                &:before {
+                    color: $color-white;
+                    top: -15px;
+                }
+            }
+        }
+    }
+
+    .close-top {
+        position:absolute;
+        right:10px;
+        top:-40px;
+        opacity:1;
+        color: $color-white;
+    }
+
+    .modal-content {
+        position: relative;
+        @include border-radius(3px);
+
+        .modal-body {
+            padding: 0;
+
+            .row {
+                margin-left:0;
+                margin-right:0;
+            }
+
+            label {
+                color: $color-gray-3;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+
+            .header {
+                padding-top: 10px;
+
+                .photo {
+                    float: left;
+                    margin-right: 15px;
+                    margin-top: -10px;
+                }
+
+                h4 {
+                    color: $color-blue-2;
+                    margin-top: 0;
+                }
+
+                .type-select {
+                    margin-right: 15px;
+                }
+            }
+
+            .form {
+                padding: 10px 30px;
+
+                .small {
+                    width: 60px;
+                }
+
+                .yes-no {
+                    display: none;
+                }
+
+                .yes-no + label {
+                    display: inline-block;
+                    width: 44px;
+                    height: 28px;
+                    @include bg-img('yes-no-no.png');
+                    @include hide-text;
+                    cursor: pointer;
+                }
+
+                .yes-no:checked + label {
+                    @include bg-img('yes-no-yes.png');
+                }
+            }
+
+            .buttons {
+                padding: 10px;
+                border-top: 1px $color-gray-4 solid;
+            }
+
+            .cancel, .cancel:hover {
+                color: $color-gray-3;
+                margin: 5px 15px 0 0;
+            }
+        }
+    }
+
+    .modal-footer {
+        display: none;
+    }
+}
+
+
+
+#reserve-wizard {
+    .steps {
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        li {
+            padding: 10px 0;
+            width: 256px;
+            background: $color-gray-1;
+            text-align: center;
+            color: $color-gray-3;
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+
+            @media (max-width: 767px) {
+                width:100%;
+            }
+
+            &.active {
+                background: $color-blue-2;
+                color: $color-white;
+            }
+        }
+    }
+
+    .review-warning {
+        color: $color-blue-2;
+
+        i {
+            &.glyphicons {
+                padding-left: 20px;
+                &:before {
+                    line-height: 20px;
+                    color: $color-blue-2;
+                    font-size: 16px;
+                    top: -10px;
+                }
+            }
+        }
+    }
+
+    .review-section {
+        min-height: 300px;
+        padding-bottom:70px;
+        position:relative;
+
+        p {
+            margin:0 0 5px 0;
+            min-height:24px;
+        }
+
+        .btn-edit {
+            position:absolute;
+            bottom:20px;
+            left:0;
+        }
+    }
+}

@@ -1,0 +1,239 @@
+body.page-template-template-accomodations {
+
+    .disclaimer {
+        font-size: 14px;
+    }
+
+    .housewares-furnishings {
+
+        > div {
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+
+            .content {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                text-align: center;
+                color: $color-white;
+                padding: 0 $padding-xl;
+
+                h2 {
+                    font-size: 32px;
+                    line-height: 42px;
+                    font-weight: bold;
+                }
+
+                p, a {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+
+                a {
+                    color: $color-blue-3;
+                }
+            }
+        }
+    }
+
+    .featured-image-box {
+        margin: $margin 0;
+        max-height: 540px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .content {
+            position: absolute;
+            top: 10%;
+            color: $color-white;
+            width: 100%;
+
+            h2 {
+                font-weight: bold;
+                font-size: 32px;
+                line-height: 42px;
+                margin-bottom: $margin-lg;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 34px;
+            }
+        }
+    }
+
+    .cta {
+        background: $color-blue-3;
+        color: $color-white;
+        padding: $padding-lg;
+
+        .btn-primary {
+            background: $color-blue-4;
+            font-weight: normal;
+            border-radius: 0;
+        }
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+
+@media (max-width: 767px) {
+    body.page-template-template-accomodations {
+
+        .featured-image-box {
+            height: 400px;
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+
+        }
+
+    }
+
+}
+
+@media (min-width: 768px) {
+    body.page-template-template-accomodations {
+        header#header {
+            z-index: 101;
+            @include background-opacity($color-white, 0.7);
+
+            .brand {
+                @include bg-img('logo-white.svg');
+                background-size: 118px 45px;
+                width: 118px;
+                height: 45px;
+            }
+
+            a {
+                color: $color-white;
+            }
+        }
+
+        .hero {
+            margin-top: -80px;
+            height: 710px;
+
+            h1, h2 {
+                color: $color-white;
+                text-align: left;
+            }
+
+            h2 {
+                font-weight: 300;
+
+            }
+        }
+
+        .housewares-furnishings {
+            @include display-flex();
+
+            > div {
+                @include flex(1);
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                .content {
+                    position: absolute;
+                    width: 100%;
+                    text-align: center;
+                    top: 10%;
+                    color: $color-white;
+                    padding: 0 $padding-xl;
+
+                    h2 {
+                        font-size: 32px;
+                        line-height: 42px;
+                        font-weight: bold;
+                    }
+
+                    p, a {
+                        font-size: 20px;
+                        line-height: 26px;
+                    }
+
+                    a {
+                        color: $color-blue-3;
+                    }
+                }
+            }
+        }
+
+        .main-features {
+            padding: $padding-lg $padding-xl;
+
+            .main-feature {
+                padding: $padding;
+                margin-bottom: $margin-lg;
+            }
+        }
+
+        .secondary-features {
+            .secondary-feature {
+                height: 200px;
+                text-align: left;
+                img {
+                    float: left;
+                }
+
+                .text {
+                    padding-left: 100px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    body.page-template-template-accomodations {
+        .housewares-furnishings {
+            > div {
+                .content {
+                    top: 20%;
+
+                    h2 {
+                        font-size: 42px;
+                        line-height: 48px;
+                    }
+
+                    p, a {
+                        font-size: 28px;
+                        line-height: 34px;
+                    }
+                }
+            }
+        }
+
+        .featured-image-box {
+
+            .content {
+                top: 20%;
+
+                h2 {
+                    font-weight: bold;
+                    font-size: 42px;
+                    line-height: 48px;
+                    margin-bottom: $margin-lg;
+                }
+
+                p {
+                    font-size: 28px;
+                    line-height: 34px;
+                }
+            }
+        }
+    }
+}

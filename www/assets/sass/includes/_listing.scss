@@ -1,0 +1,80 @@
+#listing {
+
+    .title {
+        background: $color-white;
+        padding: $padding 0;
+        color: $color-blue-2;
+
+        h1 {
+            color: $color-blue-1;
+            font-weight: 600;
+        }
+    }
+
+    .details {
+        h3 {
+            font-weight: 600;
+        }
+
+        .amenities {
+            li {
+                width: 48%;
+                box-sizing: border-box;
+            }
+        }
+
+        #gmap_canvas {
+            height: 400px;
+        }
+
+        .reserve {
+            background: $color-white;
+            overflow: hidden;
+            h3 {
+                background: $color-blue-2;
+                margin: 0;
+                padding: 0 $padding-sm;
+                color: $color-white;
+                line-height: 60px;
+            }
+
+            form {
+                padding: $padding;
+                label {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+@media (min-width: 768px) {
+    #listing {
+        .hero {
+            min-height: 340px;
+        }
+
+        h1, ul {
+            margin: 0;
+        }
+
+        .title {
+
+            ul {
+                margin-top: $margin;
+
+                li {
+                    margin-left: $margin;
+                }
+            }
+        }
+
+        .details {
+            .reserve {
+                margin-top: $margin;
+            }
+        }
+    }
+}

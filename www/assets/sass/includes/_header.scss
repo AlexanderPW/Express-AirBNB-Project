@@ -1,0 +1,51 @@
+header#header {
+    background: $color-white;
+
+    .brand {
+        @include hide-text;
+        @include bg-img('logo-color.svg');
+        background-size: 118px 45px;
+        width: 118px;
+        height: 45px;
+        margin-top: $margin-sm;
+    }
+}
+/* ------------------ DESKTOP --------------------*/
+@media (min-width: 768px) {
+    header#header {
+        height: 80px;
+        background: $color-white;
+
+        .main-menu {
+            .menu-item {
+                font-size: 18px;
+                line-height: 24px;
+                margin-top: 25px;
+                padding-left: $padding-xl;
+            }
+        }
+    }
+}
+
+/* ------------------- PHONE ---------------------*/
+@media (max-width: 767px) {
+    header#header {
+        .navbar-fixed-top {
+            background: $color-white;
+
+            .navbar-toggle {
+                color: $color-blue-1;
+            }
+        }
+
+        .navbar-brand {
+            @include hide-text;
+            @include bg-img('logo-color.svg');
+            background-size: 118px 45px;
+            width: 118px;
+            height: 45px;
+            margin-left: $margin-xs;
+        }
+
+    }
+}

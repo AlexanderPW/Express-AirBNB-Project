@@ -1,0 +1,75 @@
+body.home {
+    .hero {
+        position: relative;
+        h1, h2 {
+            color: $color-blue-2;
+        }
+
+        .btn-cta {
+            margin-top: $margin;
+            padding: $padding $padding-xl;
+        }
+
+        .main-search {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include background-opacity($color-white, 0.7);
+            width: 100%;
+
+            form {
+                padding-top: $padding;
+
+                input, select {
+                    @include placeholder(#a0a0a0);
+                }
+            }
+        }
+    }
+
+    #featured-listings {
+        .listing {
+            text-align: center;
+            a {
+                color: $color-white;
+                font-size: 24px;
+                padding-top: 100px;
+                display: block;
+                min-height: 200px;
+
+            }
+            background-size: 100% auto;
+            background-position: center;
+        }
+    }
+
+    #popular-destinations {
+        .listing {
+            text-align: center;
+            a {
+                color: $color-white;
+                font-size: 24px;
+                padding-top: 110px;
+                display: block;
+                min-height: 220px;
+
+            }
+            background-size: 100% auto;
+            background-position: center;
+        }
+    }
+}
+
+/* ------------------ DESKTOP --------------------*/
+@media (min-width: 768px) {
+    body.home {
+        .hero {
+            .main-search {
+                height: 70px;
+                form {
+                    padding-top: $padding;
+                }
+            }
+        }
+    }
+}
