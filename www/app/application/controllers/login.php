@@ -113,16 +113,6 @@ class Login extends User_Controller
         }
     }
 
-    /*
-    public function add_user() {
-        $this->User->add(array(
-            'username' => 'admin',
-            'password' => 'admin1',
-            'firstname' => 'Admin',
-            'lastname' => 'User',
-            'user_type_id' => 99,
-            'email' => 'test1@scmreview.info'
-        ));
-    } */
+
 }
 ?>
